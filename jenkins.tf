@@ -54,7 +54,7 @@ resource "aws_instance" "cicd-jenkins" {
   
 
   tags = {
-    Name = "stage-tomcat"
+    Name = "stage-jenkns"
   }
 }
 
