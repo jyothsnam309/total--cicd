@@ -1,6 +1,6 @@
-data "http" "myip" {
-  url = "http://ipv4.icanhazip.com"
-}
+#data "http" "myip" {
+#  url = "http://ipv4.icanhazip.com"
+#}
 
 
 resource "aws_security_group" "tomcat" {
@@ -57,7 +57,7 @@ resource "aws_instance" "tomcat" {
 #rpm -ivh jdk-8u131-linux-x64.rpm
 #cd /opt
 #wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.65/bin/apache-tomcat-9.0.65-windows-x64.zip
-unzip apache-tomcat-9.0.65-windows-x64.zip
+#unzip apache-tomcat-9.0.65-windows-x64.zip
 #rm -f apache-tomcat-9.0.65-windows-x64.zip
 #mv apache-tomcat-9.0.65 tomcat9
 #cd /tomcat9
