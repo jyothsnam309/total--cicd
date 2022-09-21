@@ -50,22 +50,22 @@ resource "aws_instance" "tomcat" {
   vpc_security_group_ids = [aws_security_group.tomcat.id]
   key_name        = aws_key_pair.stage.id
 
-  user_data = <<-EOF
-              #!/bin/bash
-              cd /tmp
-              wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
-              rpm -ivh jdk-8u131-linux-x64.rpm
-              cd /opt
-              wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.65/bin/apache-tomcat-9.0.65-windows-x64.zip
-              unzip apache-tomcat-9.0.65-windows-x64.zip
-              rm -f apache-tomcat-9.0.65-windows-x64.zip
-              mv apache-tomcat-9.0.65 tomcat9
-              cd /tomcat9
-              cd bin
-              ls -ltr *.sh
-              chmod 755 *.sh
-              ./startup.sh
-              ps -ef | grep tomcat
+   # user_data = <<-EOF
+#!/bin/bash
+cd /tmp
+wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+rpm -ivh jdk-8u131-linux-x64.rpm
+cd /opt
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.65/bin/apache-tomcat-9.0.65-windows-x64.zip
+unzip apache-tomcat-9.0.65-windows-x64.zip
+rm -f apache-tomcat-9.0.65-windows-x64.zip
+mv apache-tomcat-9.0.65 tomcat9
+cd /tomcat9
+cd bin
+ls -ltr *.sh
+chmod 755 *.sh
+./startup.sh
+ps -ef | grep tomcat
 
 
 
