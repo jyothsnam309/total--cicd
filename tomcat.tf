@@ -6,7 +6,8 @@
 resource "aws_security_group" "tomcat" {
   name        = "tomcat-sg"
   description = "Allow admin to ssh"
-#  vpc_id      = aws_vpc.stage-vpc.id
+  vpc_id      = vpc-01a54eb210751786d
+
 
   ingress {
     description = "connecting to admins"
@@ -45,8 +46,8 @@ ingress {
 resource "aws_instance" "tomcat" {
   ami           = "ami-0b89f7b3f054b957e"
   instance_type = "t2.micro"
-  #  vpc_id = "aws_vpc.stage-vpc.id"
-  #subnet_id              = aws_subnet.stage-pub[0].id
+  vpc_id = vpc-01a54eb210751786d
+  subnet_id              = subnet-060549087f71cc584
   vpc_security_group_ids = [aws_security_group.tomcat.id]
   key_name        = aws_key_pair.stage.id
 
