@@ -49,7 +49,7 @@ resource "aws_instance" "tom" {
  # vpc_id = "vpc-01a54eb210751786d"
   subnet_id              = "subnet-060549087f71cc584"
   vpc_security_group_ids = [aws_security_group.tom.id]
-  key_name        = aws_key_pair.stage.id
+  key_name        = aws_key_pair.stages.id
 
   
 
@@ -59,7 +59,7 @@ resource "aws_instance" "tom" {
 }
 
 
-resource "aws_key_pair" "stage" {
-  key_name   = "stage"
+resource "aws_key_pair" "stages" {
+  key_name   = "stages"
   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCiFmmvR9ycaZyq2sIWlnp5qpeBXL5ZNZ23EXfqz8Y/W5naDQfHFI2BREcPj5ug+Bz/fBDdzbmt29r8dHNXsujjIMtYnW4sGOVFXrndNOptWSb9Or6tfQ26fAmxUmEkU1GVaL3rcCS6OhOjzodVH6L3hfGMUFf6z0PaSpcZH9013dqInEQvJozFodkYsqlkhqvE33fZ0j4/pKlay7Pm81eW4gdeMXRXyXF9hzRd9hNygc8SE42uH//cxfJUwXbGnCWI8r2PYoo5FDHvIJoNnJ89ayZDVwPaTRweBR4Fjff6+awGYiddNztK/GNHjDM1hFaD21bIm6bJeZu+jAw1rn/jnE+7rIcVKkY2tussPN1JZrXdzWVV/B8F1/Oqw+TnP6oi9NmDtDf1HzP/Jpm4yiSl66rVeULSavCXDBO64itT4moI28VkFWv9xPCDTng1y5vP7O4g2a5o3QSEdWqx1VFpFF7gF+1eUa2CyU+u9aOAT4hcMmLes9xf+4lExdCszxs= DEEPALI REDDY@DESKTOP-5FCHM4B"
 }  
