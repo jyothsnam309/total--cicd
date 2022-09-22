@@ -60,7 +60,7 @@ resource "aws_security_group" "cicd-tomcat" {
 resource "aws_instance" "cicd-tomcat" {
   ami           = "ami-0f62d9254ca98e1aa"
   instance_type = "t2.micro"
-   vpc_id = "vpc-01a54eb210751786d"
+  #vpc_id = "vpc-01a54eb210751786d"
   subnet_id              = "subnet-060549087f71cc584"
   vpc_security_group_ids = [aws_security_group.cicd-tomcat.id]
   #  key_name        = ${aws_key_pair.dev.id}

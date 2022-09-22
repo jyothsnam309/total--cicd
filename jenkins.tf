@@ -51,9 +51,9 @@ resource "aws_instance" "cicd-jenkins" {
   instance_type = "c5.2xlarge"
    vpc_id = "vpc-01a54eb210751786d"
   subnet_id              = "subnet-060549087f71cc584"
-  vpc_security_group_ids = [aws_security_group.cicd.id]
+  vpc_security_group_ids = [aws_security_group.cicd-jenkins.id]
   #  key_name        = ${aws_key_pair.dev.id}
-  key_name  = aws_key_pair.jenkins.id
+  key_name  = aws_key_pair.demo.id
 
   user_data = <<-EOF
 #!/bin/bash
