@@ -29,7 +29,7 @@ resource "aws_security_group" "cicd-jenkins" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    security_groups = ["${chomp(data.http.myip.body)}/32"]
+    security_groups = ["0.0.0.0/0"]
   }
 
   egress {
