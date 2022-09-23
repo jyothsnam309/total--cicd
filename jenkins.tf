@@ -18,7 +18,7 @@ resource "aws_security_group" "cicd-jenkins" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    security_groups= ["aws_security_group.cicd-tomcat.id"]
+    security_groups= "aws_security_group.cicd-tomcat.id"
 
   }
 
@@ -49,7 +49,7 @@ resource "aws_security_group" "cicd-jenkins" {
 resource "aws_instance" "cicd-jenkins" {
   ami           = "ami-0f62d9254ca98e1aa"
   instance_type = "c5.2xlarge"
-   vpc_id = "vpc-01a54eb210751786d"
+  #vpc_id = "vpc-01a54eb210751786d"
   subnet_id              = "subnet-060549087f71cc584"
   vpc_security_group_ids = [aws_security_group.cicd-jenkins.id]
   #  key_name        = ${aws_key_pair.dev.id}
