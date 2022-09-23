@@ -26,7 +26,7 @@ resource "aws_security_group" "cicd-tomcat" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    security_groups = ["aws_security_group.cicd-jenkins.id"
+    security_groups = ["aws_security_group.cicd-jenkins.id"]
 
 
   }
