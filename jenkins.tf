@@ -52,6 +52,7 @@ resource "aws_instance" "cicd-jenkins" {
   #vpc_id = "vpc-01a54eb210751786d"
   subnet_id              = "subnet-060549087f71cc584"
   vpc_security_group_ids = [aws_security_group.cicd-jenkins.id]
+  iam_instance_profile = aws_iam_instance_profile.artifactory.name
   #  key_name        = ${aws_key_pair.dev.id}
   key_name  = aws_key_pair.demo.id
 
